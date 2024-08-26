@@ -1,0 +1,40 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Pacific Reef</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="card">
+        <h1>Hotel Pacific Reef</h1>
+        <h2>Igresa tus datos para registrarte</h2>
+        <form action='' method="post">
+            {% csrf_token %}
+            <label for="id_username">Usuario</label>
+            <input type="text" id="id_username" name="username" placeholder="Nombre de usuario" required>
+
+            <label for="id_first_name">Nombre</label>
+            <input type="text" id="id_first_name" name="first_name" placeholder="Nombre" required>
+
+            <label for="id_last_name">Apellido</label>
+            <input type="text" id="id_last_name" name="last_name" placeholder="Apellido" required>
+
+            <label for="id_email">Email</label>
+            <input type="email" id="id_email" name="email" placeholder="Correo" required>
+            
+            <label for="id_password1">Contraseña</label>
+            <input type="password" id="id_password1" name="password1" placeholder="Contraseña" required>
+
+            <label for="id_password2">Repite tu contraseña</label>
+            <input type="password" id="id_password2" name="password2" placeholder="Contraseña" required>
+
+            <button type="submit">Registrarse</button>
+        </form>
+        <br>
+        <p>Creado por Sebastian Corvalan</p>
+    </div>
+</body>
+</html>

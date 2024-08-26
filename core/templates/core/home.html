@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% block content %}
+    {%load static%}
+    <div class="banner">
+        <img src="{% static 'img/banner_home.jpg' %}" alt="Banner">
+    </div>
+
+    {% if request.user.is_authenticated %}
+        <div class="container">
+            <h1 class="text">Hola {{ user.first_name|lower|capfirst }} {{ user.last_name|lower|capfirst }} , Bienvenido a Pacific Reef </h1>
+        </div>
+    {% else %}
+        <div class="container">
+            <h1 class="text">Bienvenido a Pacific Reef </h1>
+        </div>
+    {% endif%}
+
+{% endblock  %}

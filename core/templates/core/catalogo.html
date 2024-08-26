@@ -1,0 +1,16 @@
+{% extends 'core/base.html'%}
+
+{% block content %}
+    {%load static%}
+    <div class="container">
+        {% for habitacion in habitaciones %}
+            <div class="item">
+                <img class="img" src="{% static 'img/hab1.jpg' %}" alt="Imagen 1">
+                <div class="text">{{ habitacion.nombre_hab}}</div>
+                <p class="text">{{ habitacion.descripcion }}</p>
+            </div>
+        {% endfor %}        
+    </div>
+
+{% endblock %}
+

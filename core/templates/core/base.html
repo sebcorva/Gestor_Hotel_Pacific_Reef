@@ -1,0 +1,31 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Hotel</title>
+    <link rel="stylesheet" href="{% static 'css/style_home.css' %}"> 
+</head>
+<body>
+    <div class="navbar">
+        <a href={% url 'home' %}>Inicio</a>
+        <a href={% url 'catalogo' %}>Catalogo</a>
+        <a href="#">Check-in</a>
+        {% if request.user.is_authenticated %}
+            <a href={%url 'exit' %}>Salir</a>
+        {% else %}
+            <a href={%url 'login' %}>Iniciar sesión</a>
+            <a href={%url 'register' %}>Registrarse</a>
+        {% endif%}
+    </div>
+    
+    {% block content %}{% endblock %}
+
+    <div class="footer">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+    </div>
+</body>
+</html>
